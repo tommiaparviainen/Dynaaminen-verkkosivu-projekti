@@ -1,3 +1,4 @@
+<a href="/">Takaisin etusivulle</a>
 <h1>Lisää uusi ratkaisu</h1>
 
 <form method="POST" action="/lisaa">
