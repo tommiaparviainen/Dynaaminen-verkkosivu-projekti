@@ -22,5 +22,5 @@ Route::post('/lisaa', function () {
         'description' => $kuvaus
     ]);
 
-    return 'Tallennettu tietokantaan!';
+    return redirect('/');
 });
