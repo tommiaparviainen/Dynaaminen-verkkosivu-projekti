@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\File;
+use App\Models\Solution;
 
 Route::get('/', function () {
     return view('etusivu');
@@ -15,9 +15,10 @@ Route::post('/lisaa', function () {
     $nimi = request('name');
     $kuvaus = request('description');
 
-    $rivi = "Nimi: $nimi | Kuvaus: $kuvaus" . PHP_EOL;
+    Solution::create([
+        'name' => $nimi,
+        'description' => $kuvaus
+    ]);
 
-    File::append(storage_path('app/ratkaisut.txt'), $rivi);
-
-    return 'Tallennettu tiedostoon';
+    return 'Tallennettu tietokantaan!';
 });
