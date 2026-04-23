@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Solution;
 
 Route::get('/', function () {
-    return view('etusivu');
+    $ratkaisut = Solution::all();
+
+    return view('etusivu', ['ratkaisut' => $ratkaisut]);
 });
 
 Route::get('/lisaa', function () {
