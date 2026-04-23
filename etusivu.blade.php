@@ -1,9 +1,13 @@
 <h1>Ratkaisupankki</h1>
 
-<h2>Esimerkkiratkaisut</h2>
+<h2>Lisätyt ratkaisut</h2>
 
 <ul>
-    <li>Verkkosivut</li>
-    <li>Verkkokauppa</li>
-    <li>Sähköpostimarkkinointi</li>
+    @foreach ($ratkaisut as $r)
+        <li>
+            <strong>{{ $r->name }}</strong><br>
+            {{ $r->description }}
+        </li>
+        <br>
+    @endforeach
 </ul>
