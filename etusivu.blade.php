@@ -1,3 +1,4 @@
+<a href="/lisaa">Lisää uusi ratkaisu</a>
 <h1>Ratkaisupankki</h1>
 
 <h2>Lisätyt ratkaisut</h2>
