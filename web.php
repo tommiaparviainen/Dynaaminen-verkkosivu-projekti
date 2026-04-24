@@ -19,10 +19,12 @@ Route::get('/lisaa', function () {
 Route::post('/lisaa', function () {
     $nimi = request('name');
     $kuvaus = request('description');
+    $problemAreaId = request('problem_area_id');
 
     Solution::create([
         'name' => $nimi,
-        'description' => $kuvaus
+        'description' => $kuvaus,
+        'problem_area_id' => $problemAreaId
     ]);
 
     return redirect('/');
