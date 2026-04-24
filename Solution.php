@@ -11,4 +11,8 @@ class Solution extends Model
 {
     return $this->belongsTo(\App\Models\ProblemArea::class);
 }
+public function tags()
+{
+    return $this->belongsToMany(\App\Models\Tag::class);
+}
 }
