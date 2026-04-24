@@ -26,6 +26,15 @@
             @endforeach
         </select>
     </div>
+    <br>
+
+    <div>
+        <label>Tagit</label><br>
+        @foreach ($tags as $tag)
+            <input type="checkbox" name="tags[]" value="{{ $tag->id }}">
+            {{ $tag->name }}<br>
+        @endforeach
+    </div>
 
     <button type="submit">Tallenna</button>
 </form>
