@@ -25,11 +25,17 @@ Route::post('/lisaa', function () {
     $kuvaus = request('description');
     $problemAreaId = request('problem_area_id');
 
-    Solution::create([
-        'name' => $nimi,
-        'description' => $kuvaus,
-        'problem_area_id' => $problemAreaId
-    ]);
+    $solution = Solution::create([
+    'name' => $nimi,
+    'description' => $kuvaus,
+    'problem_area_id' => $problemAreaId
+]);
+
+$tags = request('tags');
+
+if ($tags) {
+    $solution->tags()->attach($tags);
+}
 
     return redirect('/');
 });
