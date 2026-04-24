@@ -12,8 +12,12 @@ Route::get('/', function () {
 
 Route::get('/lisaa', function () {
     $areas = ProblemArea::all();
+    $tags = \App\Models\Tag::all();
 
-    return view('lisaa', ['areas' => $areas]);
+    return view('lisaa', [
+        'areas' => $areas,
+        'tags' => $tags
+    ]);
 });
 
 Route::post('/lisaa', function () {
@@ -36,4 +40,10 @@ Route::get('/testi', function () {
     ]);
 
     return 'lisätty';
+});
+Route::get('/tagtest', function () {
+    \App\Models\Tag::create(['name' => 'B2B']);
+    \App\Models\Tag::create(['name' => 'B2C']);
+
+    return 'tagit lisätty';
 });
