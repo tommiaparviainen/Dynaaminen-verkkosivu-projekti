@@ -7,6 +7,7 @@
     @foreach ($ratkaisut as $r)
         <li>
             <strong>{{ $r->name }}</strong><br>
+            ({{ $r->problemArea->name ?? 'ei aluetta' }})<br>
             {{ $r->description }}
         </li>
         <br>
