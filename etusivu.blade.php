@@ -9,6 +9,11 @@
             <strong>{{ $r->name }}</strong><br>
             ({{ $r->problemArea->name ?? 'ei aluetta' }})<br>
             {{ $r->description }}
+            <br>
+            Tagit:
+            @foreach ($r->tags as $tag)
+                {{ $tag->name }}
+            @endforeach
         </li>
         <br>
     @endforeach
