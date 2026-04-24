@@ -16,6 +16,16 @@
     </div>
 
     <br>
+    <br>
+
+    <div>
+        <label>Ongelma-alue</label><br>
+        <select name="problem_area_id">
+            @foreach ($areas as $area)
+                <option value="{{ $area->id }}">{{ $area->name }}</option>
+            @endforeach
+        </select>
+    </div>
 
     <button type="submit">Tallenna</button>
 </form>
