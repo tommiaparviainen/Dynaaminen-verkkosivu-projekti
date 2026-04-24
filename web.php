@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Solution;
+use App\Models\ProblemArea;
 
 Route::get('/', function () {
     $ratkaisut = Solution::all();
@@ -10,7 +11,9 @@ Route::get('/', function () {
 });
 
 Route::get('/lisaa', function () {
-    return view('lisaa');
+    $areas = ProblemArea::all();
+
+    return view('lisaa', ['areas' => $areas]);
 });
 
 Route::post('/lisaa', function () {
@@ -23,4 +26,12 @@ Route::post('/lisaa', function () {
     ]);
 
     return redirect('/');
+});
+
+Route::get('/testi', function () {
+    ProblemArea::create([
+        'name' => 'myynti'
+    ]);
+
+    return 'lisätty';
 });
