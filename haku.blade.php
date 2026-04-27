@@ -26,3 +26,14 @@
 
     <button type="submit">Hae</button>
 </form>
+<h2>Tulokset</h2>
+
+<ul>
+    @foreach ($ratkaisut as $r)
+        <li>
+            <strong>{{ $r->name }}</strong><br>
+            {{ $r->description }}
+        </li>
+        <br>
+    @endforeach
+</ul>
