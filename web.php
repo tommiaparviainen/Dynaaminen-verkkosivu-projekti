@@ -78,3 +78,16 @@ Route::get('/haku', function () {
         'ratkaisut' => $ratkaisut
     ]);
 });
+Route::get('/kpi', function () {
+    $solutions = Solution::all();
+    return view('kpi', ['solutions' => $solutions]);
+});
+
+Route::post('/kpi', function () {
+    \App\Models\Kpi::create([
+        'name' => request('name'),
+        'solution_id' => request('solution_id')
+    ]);
+
+    return redirect('/');
+});
