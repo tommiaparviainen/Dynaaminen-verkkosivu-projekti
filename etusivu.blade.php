@@ -1,5 +1,6 @@
 <a href="/haku">Hae ratkaisuja</a> |
-<a href="/lisaa">Lisää uusi ratkaisu</a>
+<a href="/lisaa">Lisää uusi ratkaisu</a> |
+<a href="/kpi">Lisää KPI</a>
 <h1>Ratkaisupankki</h1>
 
 <h2>Lisätyt ratkaisut</h2>
