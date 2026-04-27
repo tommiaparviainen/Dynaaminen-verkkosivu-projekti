@@ -15,4 +15,8 @@ public function tags()
 {
     return $this->belongsToMany(\App\Models\Tag::class);
 }
+public function kpis()
+{
+    return $this->hasMany(\App\Models\Kpi::class);
+}
 }
