@@ -15,6 +15,11 @@
             @foreach ($r->tags as $tag)
                 {{ $tag->name }}
             @endforeach
+            <br>
+            KPI:
+            @foreach ($r->kpis as $kpi)
+            <div>- {{ $kpi->name }}</div>
+            @endforeach
         </li>
         <br>
     @endforeach
