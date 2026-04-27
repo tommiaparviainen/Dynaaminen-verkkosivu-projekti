@@ -1,3 +1,4 @@
+<a href="/haku">Hae ratkaisuja</a> |
 <a href="/lisaa">Lisää uusi ratkaisu</a>
 <h1>Ratkaisupankki</h1>
 
