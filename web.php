@@ -58,10 +58,18 @@ Route::get('/haku', function () {
     $areas = ProblemArea::all();
     $tags = \App\Models\Tag::all();
 
-    $ratkaisut = [];
+    $ratkaisut = collect();
 
     if (request('problem_area_id')) {
-        $ratkaisut = Solution::where('problem_area_id', request('problem_area_id'))->get();
+        $query = Solution::where('problem_area_id', request('problem_area_id'));
+
+        if (request('tags')) {
+            $query->whereHas('tags', function ($q) {
+                $q->whereIn('tags.id', request('tags'));
+            });
+        }
+
+        $ratkaisut = $query->get();
     }
 
     return view('haku', [
