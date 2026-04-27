@@ -58,9 +58,15 @@ Route::get('/haku', function () {
     $areas = ProblemArea::all();
     $tags = \App\Models\Tag::all();
 
+    $ratkaisut = [];
+
+    if (request('problem_area_id')) {
+        $ratkaisut = Solution::where('problem_area_id', request('problem_area_id'))->get();
+    }
+
     return view('haku', [
         'areas' => $areas,
         'tags' => $tags,
-        'ratkaisut' => []
+        'ratkaisut' => $ratkaisut
     ]);
 });
