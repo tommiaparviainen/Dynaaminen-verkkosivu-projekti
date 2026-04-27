@@ -53,3 +53,14 @@ Route::get('/tagtest', function () {
 
     return 'tagit lisätty';
 });
+
+Route::get('/haku', function () {
+    $areas = ProblemArea::all();
+    $tags = \App\Models\Tag::all();
+
+    return view('haku', [
+        'areas' => $areas,
+        'tags' => $tags,
+        'ratkaisut' => []
+    ]);
+});
